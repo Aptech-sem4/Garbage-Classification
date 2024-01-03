@@ -54,7 +54,7 @@ def upload_file():
             #     }
             # }
             res = {
-                'message': res_predict,
+                'message':  np.int64(res_predict),
                 'data' : {
                     # 'type': res_predict,
                     'file_name' : new_filename
