@@ -9,7 +9,7 @@ mymodel = load_model(MODEL_PATH)
 
 # Function to preprocess a single image for prediction
 def preprocess_image(img_path):
-    img = image.load_img(img_path, target_size=(320, 320))  # Adjust target size as needed
+    img = image.load_img(img_path, target_size=(224, 224))  # Adjust target size as needed
     img_array = image.img_to_array(img)
     img_array = np.expand_dims(img_array, axis=0)
     return img_array
