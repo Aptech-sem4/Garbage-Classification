@@ -47,6 +47,6 @@ def process_image(filename):
     
     # Process decoded predictions to get the top result
     # top_prediction = decoded_predictions[0][0]  # Lấy kết quả dự đoán hàng đầu
-    print(predicted_class)
+    print(type(predicted_class))
     return predicted_class
     # pass
