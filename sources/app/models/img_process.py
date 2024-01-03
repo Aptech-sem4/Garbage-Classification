@@ -17,7 +17,7 @@ def preprocess_image(img_path):
 # Function to make predictions on a single image
 def predict_single_image(image_path):
     preprocessed_img = preprocess_image(image_path)
-    prediction = model.predict(preprocessed_img)
+    prediction = mymodel.predict(preprocessed_img)
     predicted_class = np.argmax(prediction)
     return predicted_class
 
