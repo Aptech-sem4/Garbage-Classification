@@ -46,8 +46,15 @@ def upload_file():
             # res_predict = 'test'
             print(res_predict)
 
+            # res = {
+            #     'message': 'File uploaded successfully',
+            #     'data' : {
+            #         # 'type': res_predict,
+            #         'file_name' : new_filename
+            #     }
+            # }
             res = {
-                'message': 'File uploaded successfully',
+                'message': res_predict,
                 'data' : {
                     # 'type': res_predict,
                     'file_name' : new_filename
