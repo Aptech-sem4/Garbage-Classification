@@ -45,7 +45,7 @@ def upload_file():
             res_predict = process_image(new_filename)
             # res_predict = 'test'
             print('000000000000000')
-            print(type(res_predict))
+            print((res_predict))
             print('11111111111111')
 
             # res = {
