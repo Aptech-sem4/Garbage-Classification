@@ -135,7 +135,7 @@
     align-items: center;
     margin: 5px 0;
     width: 100%;
-    position: fixed;
+    /* position: fixed; */
     bottom: 0;
 }
 .wapper-body .w-footer{
@@ -340,6 +340,12 @@
 }
 .w-tips-content img{
     max-width: 100%;
+    width: 100vh;
+}
+
+.w-help-content{
+    margin: 15px;
+    text-align: justify;
 }
   /* Animation */
 @keyframes ellipsisAnimation {
