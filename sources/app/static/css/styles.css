@@ -347,6 +347,66 @@
     margin: 15px;
     text-align: justify;
 }
+
+/* CSS for the video container */
+.w-video-container {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+/* CSS for the video */
+#video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* CSS for the square frame */
+.w-square-frame {
+    width: 240px;
+    height: 240px;
+    border: 3px solid red; /* Border style */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+/* CSS for the centered plus sign */
+.centered-plus {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #05ff71;
+    z-index: 2;
+}
+
+/* Additional styles for the camera and canvas */
+.w-show-camera {
+    position: relative;
+}
+
+/* CSS for the centered text */
+.centered-text {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    width: 110%;
+}
+
+/* Additional styles for the text */
+.centered-text p {
+    font-size: 14px;
+    color: #05ff71;
+    margin: 0;
+}
+
   /* Animation */
 @keyframes ellipsisAnimation {
     0%, 100% {
@@ -502,6 +562,13 @@
 
 
 @media (min-width: 279px) {
+    .w-square-frame {
+        width: 120px;
+        height: 120px;
+    }
+    .centered-text p {
+        font-size: 10px;
+    }
     .w-about{
         display: flex;
         justify-content: center;

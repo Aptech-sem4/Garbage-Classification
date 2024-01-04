@@ -1,5 +1,6 @@
 from flask import Flask, render_template, current_app
 import  os
+import configparser
 
 app = Flask(__name__)
 
@@ -11,13 +12,17 @@ app.config['UPLOAD_FOLDER'] = 'app/static/uploads'
 root_path_folder = app.root_path
 # Lấy thư mục chứa file hiện tại
 current_directory = root_path_folder + '/models/files'
-MODEL_PATH = os.path.join(current_directory, 'v2_model_EfficientnetB0.h5')
+config = configparser.ConfigParser()
+config.read('config.ini')
+MODEL_PATH = os.path.join(current_directory, config['MODEL']['ver'])
 
 
 # Import Blueprint và đăng ký Blueprint vào app
-from app.routes import upload, index
+from app.routes import upload, index, version
 # predict
 
 app.register_blueprint(index.index_bp)
 app.register_blueprint(upload.upload_bp)
+app.register_blueprint(version.version_bp)
+
 # app.register_blueprint(predict.predict_bp)
