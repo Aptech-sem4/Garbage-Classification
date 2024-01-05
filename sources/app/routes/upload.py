@@ -70,7 +70,7 @@ def upload_file():
             #     }
             # }
     
-    return render_template('upload.html', res_predict)
+    return render_template('upload.html', res = res_predict)
 
 @upload_bp.route('/upload_from_camera', methods=['GET'])
 def show_upload_from_camera():
