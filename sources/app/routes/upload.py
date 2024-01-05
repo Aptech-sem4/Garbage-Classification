@@ -60,15 +60,16 @@ def upload_file():
             #         'file_name' : new_filename
             #     }
             # }
-            res = {
-                'message':  'test',
-                'data' : {
-                    'type': int(res_predict),
-                    'file_name' : new_filename
-                }
-            }
+            
+            # res = {
+            #     'message':  'test',
+            #     'data' : {
+            #         'type': int(res_predict),
+            #         'file_name' : new_filename
+            #     }
+            # }
     
-    return render_template('upload.html', result = jsonify(res))
+    return render_template('upload.html', result = res_predict)
 
 @upload_bp.route('/upload_from_camera', methods=['GET'])
 def show_upload_from_camera():
