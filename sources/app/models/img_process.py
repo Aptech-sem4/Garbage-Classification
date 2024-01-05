@@ -36,7 +36,7 @@ def process_image(filename):
     predicted_class = predict_single_image(file_path)
 
     res = transfer_lable(predicted_class)
-    return str(res)
+    return str(predicted_class)
     # pass
 
 
