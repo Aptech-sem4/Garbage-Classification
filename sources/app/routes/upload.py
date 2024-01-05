@@ -16,7 +16,6 @@ def allowed_file(filename):
 
 @upload_bp.route('/upload', methods=['GET', 'POST'])
 def upload_file():
-    res_predict = None
     if request.method == 'POST':
         if 'file' not in request.files:
             return 'No file part'
@@ -46,7 +45,7 @@ def upload_file():
             res_predict = process_image(new_filename)
             return str(res_predict)
     
-    return render_template('upload.html', res = res_predict)
+    return render_template('upload.html')
 
 @upload_bp.route('/upload_from_camera', methods=['GET'])
 def show_upload_from_camera():
