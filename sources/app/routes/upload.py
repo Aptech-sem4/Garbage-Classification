@@ -43,6 +43,7 @@ def upload_file():
             
             # Gọi model AI để xử lý ảnh
             res_predict = process_image(new_filename)
+            print(res_predict)
             # res_predict = 'test'
 
             # res = {
@@ -55,7 +56,7 @@ def upload_file():
             res = {
                 'message':  'test',
                 'data' : {
-                    'type': 2,
+                    'type': 11,
                     'file_name' : new_filename
                 }
             }
