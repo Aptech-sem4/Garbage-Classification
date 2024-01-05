@@ -13,7 +13,9 @@ root_path_folder = app.root_path
 # Lấy thư mục chứa file hiện tại
 current_directory = root_path_folder + '/models/files'
 config = configparser.ConfigParser()
-config.read('config.ini')
+ini_path = os.path.join(os.getcwd(),'config.ini')
+print(ini_path)
+config.read(ini_path)
 print(config['MODEL']['ver'])
 MODEL_PATH = os.path.join(current_directory, config['MODEL']['ver'])
 
