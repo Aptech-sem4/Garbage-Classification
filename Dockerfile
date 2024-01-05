@@ -8,8 +8,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-RUN chmod -R 777 /sites/aptech-s4/sources/app/static/uploads \
-    chmod 755 /sites/aptech-s4/config.ini
+RUN chmod -R 777 /sites/aptech-s4/sources/app/static/uploads &&
+    chmod 755 /sites/aptech-s4/sources/config.ini
 
 CMD ["python", "sources/run.py"]
 
