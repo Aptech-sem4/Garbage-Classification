@@ -42,10 +42,18 @@ def upload_file():
             file.save(os.path.join(absolute_path, new_filename))
             
             # Gọi model AI để xử lý ảnh
-            res_predict = process_image(new_filename)
-            return res_predict
+            num_res = process_image(new_filename)
+
+            str_res = transfer_lable(num_res)
+            return str(str_res)
     
     return render_template('upload.html')
+
+
+def transfer_lable(index):
+    strings_list = ['battery', 'biological', 'brown-glass', 'cardboard', 'clothes', 'green-glass', 'metal', 'paper', 'plastic', 'shoes', 'trash', 'white-glass']
+    return strings_list[index]
+
 
 @upload_bp.route('/upload_from_camera', methods=['GET'])
 def show_upload_from_camera():

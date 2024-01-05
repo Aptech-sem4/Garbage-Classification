@@ -20,10 +20,6 @@ def predict_single_image(image_path):
     prediction = mymodel.predict(preprocessed_img)
     predicted_class = np.argmax(prediction)
     return predicted_class
-
-def transfer_lable(index):
-    strings_list = ['battery', 'biological', 'brown-glass', 'cardboard', 'clothes', 'green-glass', 'metal', 'paper', 'plastic', 'shoes', 'trash', 'white-glass']
-    return strings_list[index]
     
 def process_image(filename):
     # Lấy đường dẫn tuyệt đối của file hiện tại
@@ -35,8 +31,7 @@ def process_image(filename):
 
     predicted_class = predict_single_image(file_path)
 
-    res = transfer_lable(predicted_class)
-    return str(predicted_class)
+    return predicted_class
     # pass
 
 
