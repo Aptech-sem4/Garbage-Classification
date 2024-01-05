@@ -15,11 +15,13 @@ print(root_path_folder)
 # Lấy thư mục chứa file hiện tại
 current_directory = root_path_folder + '/models/files'
 
-load_dotenv('.env')
+path_env = os.path.join(root_path_folder, '.env')
+print(path_env)
+load_dotenv(path_env)
 app.config['VER'] = os.getenv('VER')
 ver_app = app.config['VER']
 
-# print(app.config['VER'])
+# # print(app.config['VER'])
 MODEL_PATH = os.path.join(current_directory, ver_app)
 # except Exception as e:
 #     print(f"An error occurred: {e}")
