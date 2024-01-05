@@ -68,7 +68,7 @@ def upload_file():
                 }
             }
     
-    return render_template('upload.html', result = res)
+    return render_template('upload.html', result = jsonify(res))
 
 @upload_bp.route('/upload_from_camera', methods=['GET'])
 def show_upload_from_camera():
