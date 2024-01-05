@@ -9,15 +9,18 @@ app.config['UPLOAD_FOLDER'] = 'app/static/uploads'
 
 # with app.app_context():
 # Thực hiện các hoạt động yêu cầu ngữ cảnh ứng dụng ở đây
-root_path_folder = app.root_path
-# Lấy thư mục chứa file hiện tại
-current_directory = root_path_folder + '/models/files'
-config_init = configparser.ConfigParser()
-ini_path = os.path.join(os.getcwd(),'config.ini')
-print(ini_path)
-config_init.read(ini_path)
-print(config_init['MODEL']['ver'])
-MODEL_PATH = os.path.join(current_directory, config_init['MODEL']['ver'])
+try:
+    root_path_folder = app.root_path
+    # Lấy thư mục chứa file hiện tại
+    current_directory = root_path_folder + '/models/files'
+    config_init = configparser.ConfigParser()
+    ini_path = os.path.join(os.getcwd(),'config.ini')
+    print(ini_path)
+    config_init.read(ini_path)
+    print(config_init['MODEL'])
+    MODEL_PATH = os.path.join(current_directory, config_init['MODEL']['ver'])
+except Exception as e:
+    print(f"An error occurred: {e}")
 
 
 # Import Blueprint và đăng ký Blueprint vào app
