@@ -55,7 +55,7 @@ def upload_file():
             res = {
                 'message':  'test',
                 'data' : {
-                    'type': res_predict,
+                    'type': 2,
                     'file_name' : new_filename
                 }
             }
