@@ -23,6 +23,7 @@ def upload_file():
                 'file_name' : ''
             }
         }
+    res_predict = None
     if request.method == 'POST':
         if 'file' not in request.files:
             return 'No file part'
@@ -31,8 +32,6 @@ def upload_file():
 
         if file.filename == '':
             return redirect(request.url) 
-        
-        res_predict = None
 
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
