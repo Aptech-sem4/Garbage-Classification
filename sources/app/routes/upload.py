@@ -16,13 +16,6 @@ def allowed_file(filename):
 
 @upload_bp.route('/upload', methods=['GET', 'POST'])
 def upload_file():
-    res = {
-            'message':  '',
-            'data' : {
-                'type': '',
-                'file_name' : ''
-            }
-        }
     res_predict = None
     if request.method == 'POST':
         if 'file' not in request.files:
@@ -52,24 +45,6 @@ def upload_file():
             # Gọi model AI để xử lý ảnh
             res_predict = process_image(new_filename)
             return str(res_predict)
-            print(res_predict)
-            # res_predict = 'test'
-
-            # res = {
-            #     'message': 'File uploaded successfully',
-            #     'data' : {
-            #         # 'type': res_predict,
-            #         'file_name' : new_filename
-            #     }
-            # }
-
-            # res = {
-            #     'message':  'test',
-            #     'data' : {
-            #         'type': int(res_predict),
-            #         'file_name' : new_filename
-            #     }
-            # }
     
     return render_template('upload.html', res = res_predict)
 

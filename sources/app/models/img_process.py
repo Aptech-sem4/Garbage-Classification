@@ -21,10 +21,12 @@ def predict_single_image(image_path):
     predicted_class = np.argmax(prediction)
     return predicted_class
 
+def transfer_lable(index):
+    strings_list = ['battery', 'biological', 'brown-glass', 'cardboard', 'clothes', 'green-glass', 'metal', 'paper', 'plastic', 'shoes', 'trash', 'white-glass']
+    return strings_list[index]
     
 def process_image(filename):
     # Lấy đường dẫn tuyệt đối của file hiện tại
-    print('vao neeeeeeeeeeee')
     folder_name = '/static/uploads'
     root_path = current_app.root_path
     
@@ -33,20 +35,8 @@ def process_image(filename):
 
     predicted_class = predict_single_image(file_path)
 
-    # img = image.load_img(file_path, target_size=(224, 224))
-    # img_array = image.img_to_array(img)
-    # img_array = np.expand_dims(img_array, axis=0)
-    # img_array /= 255
-
-    # predictions = mymodel.predict(img_array)
-
-    # y_pred = np.argmax(predictions, axis=1)
-    # target_names = classes
-    # Decode prediction
-    # decoded_predictions = EfficientNetB0.decode_predictions(predictions)
-    
-    # Process decoded predictions to get the top result
-    # top_prediction = decoded_predictions[0][0]  # Lấy kết quả dự đoán hàng đầu
-    print(type(predicted_class))
-    return predicted_class
+    res = transfer_lable(predicted_class)
+    return res
     # pass
+
+
