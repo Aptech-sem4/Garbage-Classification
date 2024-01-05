@@ -45,7 +45,7 @@ def upload_file():
             num_res = process_image(new_filename)
 
             str_res = transfer_lable(num_res)
-            return str(str_res)
+            return str_res
     
     return render_template('upload.html')
 
