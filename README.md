@@ -10,7 +10,7 @@ Add file model to \sources\app\models\files
     # build trên server https://t1-trash-detective.click
     docker run -d --network=host -v /home/is_mpv/test_docker/test/app_test/project-test1:/sites/aptech-s4 prj_sem4
     # build dưới local
-    docker run -d --network=host -v ./:/sites/aptech-s4 prj_sem4
+    docker run -d --network=host -v /home/is_mpv/test_docker/test/app_test/project-test1:/sites/aptech-s4 prj_sem4
 
     # Docker
     docker exec -it container_id /bin/bash
