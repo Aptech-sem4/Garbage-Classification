@@ -16,9 +16,10 @@ current_directory = root_path_folder + '/models/files'
 
 load_dotenv('.env')
 app.config['VER'] = os.getenv('VER')
+ver_app = app.config['VER']
 
 print(app.config['VER'])
-MODEL_PATH = os.path.join(current_directory, app.config['VER'])
+MODEL_PATH = os.path.join(current_directory, ver_app)
 # except Exception as e:
 #     print(f"An error occurred: {e}")
 
