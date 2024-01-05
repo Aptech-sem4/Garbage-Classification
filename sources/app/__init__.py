@@ -1,6 +1,6 @@
 from flask import Flask, render_template, current_app
 import  os
-import configparser
+from dotenv import load_dotenv
 
 app = Flask(__name__)
 
@@ -13,12 +13,12 @@ app.config['UPLOAD_FOLDER'] = 'app/static/uploads'
 root_path_folder = app.root_path
 # Lấy thư mục chứa file hiện tại
 current_directory = root_path_folder + '/models/files'
-config_init = configparser.ConfigParser()
-ini_path = os.path.join(os.getcwd(),'config.ini')
-print(ini_path)
-config_init.read(ini_path)
-print(config_init.get('MODEL'))
-MODEL_PATH = os.path.join(current_directory, config_init.get('MODEL','ver'))
+
+load_dotenv('.env')
+app.config['VER'] = os.getenv('VER')
+
+print(app.config['VER'])
+MODEL_PATH = os.path.join(current_directory, app.config['VER'])
 # except Exception as e:
 #     print(f"An error occurred: {e}")
 

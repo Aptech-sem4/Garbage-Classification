@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request,jsonify, redirect, Response, send_file
 import os, requests
 from flask import current_app
+from dotenv import load_dotenv
 import configparser
 
 version_bp = Blueprint('version', __name__)
@@ -50,9 +51,8 @@ def download_all_files(link):
 
 
 def get_current_version():
-    config = configparser.ConfigParser()
-    config.read('config.ini')
-    return config['MODEL']['ver']
+    load_dotenv('.env')
+    return os.getenv('VER')
 
 
 def get_list_files():

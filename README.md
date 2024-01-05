@@ -24,6 +24,7 @@ Add file model to \sources\app\models\files
     #pip install "tensorflow<2.14" 
     - pillow==8.4.0
     #pip install Pillow
+    - pip install python-dotenv
 
     # Run Flask
     - cd sources/
