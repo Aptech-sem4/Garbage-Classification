@@ -43,7 +43,7 @@ def upload_file():
             
             # Gọi model AI để xử lý ảnh
             res_predict = process_image(new_filename)
-            return str(res_predict)
+            return res_predict
     
     return render_template('upload.html')
 
