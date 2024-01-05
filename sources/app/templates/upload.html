@@ -98,6 +98,8 @@ document.getElementById('sendImage').addEventListener('submit', function(event) 
         hideloading()
     })
     .catch(error => {
+        console.log('vao catch')
+        console.log(error)
         console.error('Error:', error);
         hideloading()
     });
