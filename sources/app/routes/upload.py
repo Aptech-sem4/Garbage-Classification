@@ -16,6 +16,13 @@ def allowed_file(filename):
 
 @upload_bp.route('/upload', methods=['GET', 'POST'])
 def upload_file():
+    res = {
+            'message':  '',
+            'data' : {
+                'type': '',
+                'file_name' : ''
+            }
+        }
     if request.method == 'POST':
         if 'file' not in request.files:
             return 'No file part'
@@ -56,14 +63,12 @@ def upload_file():
             res = {
                 'message':  'test',
                 'data' : {
-                    'type': 11,
+                    'type': int(res_predict),
                     'file_name' : new_filename
                 }
             }
-
-            return jsonify(res)
     
-    return render_template('upload.html')
+    return render_template('upload.html', result = res)
 
 @upload_bp.route('/upload_from_camera', methods=['GET'])
 def show_upload_from_camera():
