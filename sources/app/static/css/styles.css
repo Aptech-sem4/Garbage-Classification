@@ -522,6 +522,37 @@
     }
 }
 
+.message {
+    padding: 10px;
+    position: relative;
+}
+
+#typed-text {
+    display: inline-block;
+}
+
+#cursor {
+    display: inline-block;
+    width: 2px;
+    height: 20px;
+    background-color: black;
+    animation: cursor-blink 0.7s infinite;
+    margin-left: 3px;
+    vertical-align: middle;
+}
+
+@keyframes cursor-blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 /* Show loading - end */
 
 @media (max-width: 1024px) {
