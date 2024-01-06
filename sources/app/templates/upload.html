@@ -91,7 +91,7 @@ document.getElementById('sendImage').addEventListener('submit', function(event) 
     .then(response => response.json())
     .then(data => {
         var uploadMessage = document.getElementById('uploadMessage');
-        uploadMessage.innerHTML(data.result)
+        uploadMessage.innerHTML = data.result
         uploadMessage.classList.remove('ellipsis');
         hideloading()
     })
