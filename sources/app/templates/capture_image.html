@@ -46,7 +46,11 @@
             </svg>
             </div>
         <div class="w-text-res ellipsis" id="uploadMessage">
-            ...
+            <span class="dot-typing">...</span>
+            <div class="message">
+                <span id="typed-text"></span>
+                <span id="cursor"></span>
+            </div>
         </div>
     </div>
 </section>
@@ -110,7 +114,10 @@
                         var response = JSON.parse(xhr.responseText);
                         // Hiển thị kết quả từ server lên thẻ HTML
                         var uploadMessage = document.getElementById('uploadMessage');
-                        uploadMessage.innerHTML = response.result;
+                        // uploadMessage.innerHTML = response.result;
+
+                        $('.dot-typing').hide()
+                        typeText([data.result])
 
                         uploadMessage.classList.remove('ellipsis');
                         hideloading()
