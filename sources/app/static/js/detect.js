@@ -29,7 +29,7 @@ function type() {
 }
 
 function render_text(str) {
-    hiddenContent.innerHTML = data.result
+    hiddenContent.innerHTML = str
     hiddenContent.style.display = "none"; // hide the original content
     revealedContent.style.display = "block"; // show the revealed content
     type(); // start the typing effect
