@@ -30,10 +30,8 @@
             </div>
         <div class="w-text-res ellipsis" id="uploadMessage">
             <span class="dot-typing">...</span>
-            <div class="message">
-                <span id="typed-text"></span>
-                <span id="cursor"></span>
-            </div>
+            <div id="content-to-hide"></div>
+            <div id="content-to-reveal"></div>
         </div>
     </div>
 
@@ -98,9 +96,12 @@ document.getElementById('sendImage').addEventListener('submit', function(event) 
     .then(response => response.json())
     .then(data => {
         var uploadMessage = document.getElementById('uploadMessage');
-        // uploadMessage.innerHTML = data.result
+        var resMess = document.getElementById('content-to-hide');
+        
+        resMess.innerHTML = data.result
         $('.dot-typing').hide()
-        typeText([data.result])
+        render_text()
+
         uploadMessage.classList.remove('ellipsis');
         hideloading()
     })
