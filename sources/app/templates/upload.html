@@ -96,11 +96,8 @@ document.getElementById('sendImage').addEventListener('submit', function(event) 
     .then(response => response.json())
     .then(data => {
         var uploadMessage = document.getElementById('uploadMessage');
-        var resMess = document.getElementById('content-to-hide');
-        
-        resMess.innerHTML = data.result
         $('.dot-typing').hide()
-        render_text()
+        render_text(data.result)
 
         uploadMessage.classList.remove('ellipsis');
         hideloading()
