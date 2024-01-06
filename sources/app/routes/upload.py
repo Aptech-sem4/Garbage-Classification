@@ -80,20 +80,12 @@ def upload_from_camera():
             f.write(img_data)
 
         # Xử lý ảnh (nếu cần)
-        # process_image(img_data)
 
-        res_predict = process_image(new_filename)
-        print(res_predict)
-
-        res = {
-                'message': 'File uploaded successfully',
-                'data' : {
-                    'type': res_predict,
-                    'file_name' : new_filename
-                }
-            }
+        #Gọi Modek AI
+        num_res = process_image(new_filename)
+        str_res = transfer_lable(num_res)
+        return jsonify({'result': str_res})
         
-        return jsonify(res)
     return 'Invalid request'
 
 

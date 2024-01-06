@@ -110,7 +110,7 @@
                         var response = JSON.parse(xhr.responseText);
                         // Hiển thị kết quả từ server lên thẻ HTML
                         var uploadMessage = document.getElementById('uploadMessage');
-                        uploadMessage.innerHTML = response.message;
+                        uploadMessage.innerHTML = response.result;
 
                         uploadMessage.classList.remove('ellipsis');
                         hideloading()
