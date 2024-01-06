@@ -16,8 +16,9 @@ function typeText(texts) {
         count++;
         index = 0;
         }
-        setTimeout(type, 100);
+        // setTimeout(type, 100);
     }
 
     type();
 }
+
