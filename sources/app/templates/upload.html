@@ -29,7 +29,7 @@
             </svg>
             </div>
         <div class="w-text-res ellipsis" id="uploadMessage">
-            ...
+            <span class="dot-typing">...</span>
             <div class="message">
                 <span id="typed-text"></span>
                 <span id="cursor"></span>
@@ -87,7 +87,7 @@ $(function () {
 
 document.getElementById('sendImage').addEventListener('submit', function(event) {
     event.preventDefault();
-
+    $('.dot-typing').show()
     var form = event.target;
     var formData = new FormData(form);
     showloading()
@@ -99,6 +99,7 @@ document.getElementById('sendImage').addEventListener('submit', function(event) 
     .then(data => {
         var uploadMessage = document.getElementById('uploadMessage');
         // uploadMessage.innerHTML = data.result
+        $('.dot-typing').hide()
         typeText([data.result])
         uploadMessage.classList.remove('ellipsis');
         hideloading()
