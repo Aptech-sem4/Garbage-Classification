@@ -47,10 +47,7 @@
             </div>
         <div class="w-text-res ellipsis" id="uploadMessage">
             <span class="dot-typing">...</span>
-            <div class="message">
-                <span id="typed-text"></span>
-                <span id="cursor"></span>
-            </div>
+            <div id="msg_res"></div>
         </div>
     </div>
 </section>
@@ -117,7 +114,9 @@
                         // uploadMessage.innerHTML = response.result;
 
                         $('.dot-typing').hide()
-                        typeText([response.result])
+
+                        var res_mes = document.getElementById('msg_res');
+                        res_mes.innerHTML = response.result
 
                         uploadMessage.classList.remove('ellipsis');
                         hideloading()
