@@ -1,7 +1,10 @@
-from flask import Blueprint, render_template, request,jsonify, redirect, Response, send_file, url_for
-import os, requests, gdown
+from flask import Blueprint, render_template, request, redirect, url_for
+import os
 from flask import current_app
-from dotenv import load_dotenv, set_key, dotenv_values
+from dotenv import set_key, dotenv_values
+from repository.auth import User
+from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
+
 
 version_bp = Blueprint('version', __name__)
 
