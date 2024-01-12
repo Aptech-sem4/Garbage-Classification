@@ -11,12 +11,11 @@ app.config['UPLOAD_FOLDER'] = 'app/static/uploads'
 # Thực hiện các hoạt động yêu cầu ngữ cảnh ứng dụng ở đây
 # try:
 root_path_folder = app.root_path
-print(root_path_folder)
 # Lấy thư mục chứa file hiện tại
 current_directory = root_path_folder + '/models/files'
 
 path_env = os.path.join(root_path_folder, '.env')
-print(path_env)
+
 load_dotenv(path_env)
 app.config['VER'] = os.getenv('VER')
 ver_app = app.config['VER']

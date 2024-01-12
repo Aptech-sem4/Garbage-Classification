@@ -3,3 +3,6 @@ tensorflow==2.14.0
 pillow==8.4.0
 python-dotenv==1.0.0
 # opencv-python-headless==4.5.3.56
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib
