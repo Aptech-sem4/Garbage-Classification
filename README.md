@@ -1,7 +1,7 @@
 # B1. Add file
 Add file model to \sources\app\models\files
 
-# B2.Dành cho ai sử dụng docker
+# B2.Docker setup
 
     # Server build docker container
     docker build --no-cache -t prj_sem4 .
@@ -15,7 +15,7 @@ Add file model to \sources\app\models\files
     # Docker
     docker exec -it container_id /bin/bash
 
-# B2.Dành cho ai chạy trực tiếp trên máy hoặc linux
+# B2.Window or Linux server
 
     # Requirements 
     - Flask==3.0.0
