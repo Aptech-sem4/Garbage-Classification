@@ -33,3 +33,5 @@ Add file model to \sources\app\models\files
 
 # Result
 ![Alt text](image.png)
+- Classification from camera
+![Alt text](image-1.png)
