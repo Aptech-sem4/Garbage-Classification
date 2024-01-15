@@ -42,7 +42,7 @@
 }
 .wapper-body{
     margin: 8vh auto;
-    width: 50vh;
+    width: 450px;
     min-height: 80vh;
     border: 1px solid #dcdcdc;
     border-radius: 12px;
@@ -89,7 +89,10 @@
     border: 1px solid #fff;
     padding: 5px;
     border-radius: 50px;
-    
+    height: 20px;
+    width: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
 .w-btn-link ul li a{
@@ -555,12 +558,104 @@
 
 /* Show loading - end */
 
+/* css login */
+.wapper-login{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+#form-login{
+
+}
+.form-row input{
+    width: 100%;
+    border: 1px solid #dcdcdc;
+    background-color: #fff;
+    color: #000;
+    border-radius: 12px;
+    padding: 6px 10px;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+#btn-flogin{
+    padding: 10px 15px;
+    color: #fff;
+    background: #00B94F;
+    border-radius: 12px;
+    width: 150px;
+}
+
+.f-btn-login{
+    text-align: center;
+}
+/* end css login */
+
+/* css upload version */
+
+.w-upload-file{
+    padding: 15px;
+    border: 1px solid #dcdcdc;
+    margin-bottom: 30px;
+}
+
+.w-choose-version ul{
+    padding: 0;
+    list-style: none;
+    margin-left: 15px;
+    margin: 5px 0 5px 15px;
+}
+
+.btn-choose-model{
+    padding: 10px 15px;
+    color: #fff;
+    background: #00B94F;
+    /* border-radius: 12px; */
+    width: 150px;
+    margin-bottom: 15px;
+}
+
+.w-choose-version li{
+    padding: 5px;
+    /* justify-content: center; */
+    align-items: center;
+    display: flex;
+}
+
+.w-choose-version li input{
+
+}
+
+.btn-up-model{
+    border: 1px solid #dcdcdc;
+    color: #fff;
+    background: #ffc700;
+    padding: 10px 15px;
+}
+
+.w-choose-version{
+    border: 1px solid #dcdcdc;
+    border-radius: 12px;
+    padding: 15px;
+}
+/* end css upload version */
+
+#msg_res{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#msg_res img{
+    width: 80px;
+    margin-left: 15px;
+}
 @media (max-width: 1024px) {
     .w-show-img{
-        width: 70vh;
+        width: 90%;
     }
     .w-result{
-        width: 70vh;
+        width: 90%;
     }
 }
 

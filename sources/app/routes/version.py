@@ -2,13 +2,14 @@ from flask import Blueprint, render_template, request, redirect, url_for
 import os
 from flask import current_app
 from dotenv import set_key, dotenv_values
-from repository.auth import User
+from app.repositories.auth import User
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 
 
 version_bp = Blueprint('version', __name__)
 
 @version_bp.route('/load-version', methods=['GET', 'POST'])
+@login_required
 def load_version():
     list_files = get_list_files()
     current_ver = get_current_version()
@@ -32,6 +33,7 @@ def load_version():
 
 
 @version_bp.route('/pick-version', methods=[ 'POST'])
+@login_required
 def pick_version():
     if request.method == 'POST':
         if 'version_model' in request.form and request.form['version_model'] is not None:

@@ -98,7 +98,10 @@ document.getElementById('sendImage').addEventListener('submit', function(event) 
         $('.dot-typing').hide()
 
         var res_mes = document.getElementById('msg_res');
-        res_mes.innerHTML = data.result
+
+        
+        res_mes.innerHTML = data.result + ' => '
+        res_mes.appendChild(detect_img(data.result))
 
         uploadMessage.classList.remove('ellipsis');
         hideloading()

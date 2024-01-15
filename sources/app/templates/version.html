@@ -19,18 +19,21 @@
     <div class="w-upload-file">
         <form method="POST" enctype="multipart/form-data" action="/load-version">
             <input type="file" name="file">
-            <button class="">Upload model</button>
+            <button class="btn-up-model">Upload model</button>
         </form>
     </div>
-    <h3>List Version</h3>
-    <form method="POST" action="/pick-version" enctype="multipart/form-data" id="sendImage">
-        <ul>
-            {% for file in files %}
-                <li><input type="radio" name="version_model" value="{{file}}" id="{{file}}">{{ file }}</li>
-            {% endfor %}
-        </ul>
-        <button class="">Upload model</button>
-    </form>
+
+    <div class="w-choose-version">
+        <h3>List Version</h3>
+        <form method="POST" action="/pick-version" enctype="multipart/form-data" id="sendImage">
+            <ul>
+                {% for file in files %}
+                    <li ><input type="radio" name="version_model" value="{{file}}" id="{{file}}"><label for="{{file}}">{{ file }}</label></li>
+                {% endfor %}
+            </ul>
+            <button class="btn-choose-model">Upload model</button>
+        </form>
+    </div>
 </div>
 
 <footer class="w-footer">

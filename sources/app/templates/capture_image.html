@@ -116,7 +116,9 @@
                         $('.dot-typing').hide()
 
                         var res_mes = document.getElementById('msg_res');
-                        res_mes.innerHTML = response.result
+                        res_mes.innerHTML = response.result + ' => '
+                        res_mes.appendChild(detect_img(response.result))
+                        // res_mes.innerHTML = response.result
 
                         uploadMessage.classList.remove('ellipsis');
                         hideloading()
