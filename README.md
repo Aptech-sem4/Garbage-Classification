@@ -25,6 +25,8 @@ Add file model to \sources\app\models\files
     - pillow==8.4.0
     #pip install Pillow
     - pip install python-dotenv
+    # pip install flask-login
+    - flask-login
 
     # Run Flask
     - cd sources/
