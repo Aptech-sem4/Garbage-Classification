@@ -33,6 +33,9 @@ Add file model to \sources\app\models\files
     - py run.py
 
 
+# QR-code
+![Alt text](QR-code.png)
+
 # Result
 ![Alt text](image.png)
 
