@@ -1,7 +1,7 @@
-# B1. Add file
+### B1. Add file
 Add file model to \sources\app\models\files
 
-# B2.Docker setup
+### B2.Docker setup
 
     # Server build docker container
     docker build --no-cache -t prj_sem4 .
@@ -15,7 +15,7 @@ Add file model to \sources\app\models\files
     # Docker
     docker exec -it container_id /bin/bash
 
-# B2.Window or Linux server
+### B2.Window or Linux server
 
     # Requirements 
     - Flask==3.0.0
@@ -33,12 +33,12 @@ Add file model to \sources\app\models\files
     - py run.py
 
 
-# QR-code
+### QR-code
 ![Alt text](QR-code.png)
 
-# Result
+### Result
 ![Alt text](image.png)
 
-# Classification from camera
+### Classification from camera
 
 ![Alt text](image-1.png)
