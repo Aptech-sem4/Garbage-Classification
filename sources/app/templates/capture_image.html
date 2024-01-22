@@ -69,9 +69,13 @@
         var canvas = document.getElementById('canvas');
         var context = canvas.getContext('2d');
 
+        video.setAttribute('autoplay', '');
+        video.setAttribute('muted', '');
+        video.setAttribute('playsinline', '')
+
         var constraints = {
             video: {
-                facingMode: 'user', // Chế độ sử dụng camera sau (rear camera) trên điện thoại di động
+                facingMode: 'environment', // Chế độ sử dụng camera sau (rear camera) trên điện thoại di động
                 width: { ideal: 1280 },   // Kích thước video mong muốn (độ rộng)
                 height: { ideal: 720 }    // Kích thước video mong muốn (độ cao)
             }
@@ -80,6 +84,7 @@
         navigator.mediaDevices.getUserMedia(constraints)
             .then(function(stream) {
                 video.srcObject = stream;
+
                 video.play();
             })
             .catch(function(err) {
